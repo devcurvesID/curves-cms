@@ -1,0 +1,111 @@
+.fc-unthemed td.fc-today {
+    background: #F5a2;
+}
+
+.fc td, .fc th {
+    color: #FFF;
+    height: 100%;
+}
+
+.fc-toolbar.fc-header-toolbar {
+    /*background: #a5a9;*/
+    padding: 20px;
+    color: #FFF;
+    margin-bottom: 0px;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    border: 1px solid white;
+}
+
+.fc-toolbar .fc-left, .fc-toolbar .fc-right {
+    display: none;
+}
+.fc-toolbar .fc-center, .fc-toolbar .fc-center h2{
+    width: 100%;
+    position: relative;
+}
+.fc-toolbar .fc-center:before {
+    content: '\f053';
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 18px;
+    line-height: 25px;
+    padding: 2.5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    position: absolute;
+    left: 0px;
+}
+
+.fc-toolbar .fc-center:after {
+    content: '\f054';
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 18px;
+    line-height: 25px;
+    padding: 2.5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    position: absolute;
+    right: 0px;
+}
+
+/*.fc-head:before{*/
+    /*content: "\"";*/
+    /*position: absolute;*/
+    /*color: white;*/
+    /*font-size: 72px;*/
+    /*top: -22.5px;*/
+    /*left: 107.5px;*/
+/*}*/
+/*.fc-head:after{*/
+    /*content: "\"";*/
+    /*position: absolute;*/
+    /*color: white;*/
+    /*font-size: 72px;*/
+    /*top: -22.5px;*/
+    /*right: 107.5px;*/
+/*}*/
+
+#my_left-button{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 0px;
+    z-index: 999;
+}
+#my_right-button{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 0px;
+    z-index: 999;
+}
+#my_left-button:hover, #my_right-button:hover{
+    cursor: pointer;
+}
+.fc .fc-row .fc-content-skeleton table, .fc .fc-row .fc-content-skeleton td, .fc .fc-row .fc-helper-skeleton td{
+    padding: 0px !important;
+}
+.fc .fc-toolbar>*>*{
+    margin-left: 0px;
+}
+
+
+.my_v_m {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+/*MODAL*/
+.modal-header{
+    background: linear-gradient(to bottom right, purple, pink);
+    color: white;
+}
+
+.modal-header .modal-title{
+    text-align: center;
+}

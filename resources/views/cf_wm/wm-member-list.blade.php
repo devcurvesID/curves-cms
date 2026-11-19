@@ -1,0 +1,98 @@
+@extends('cf_wm.layout.wm-template')
+
+@section('other-style')
+    {{--DATA TABLE--}}
+    <link href="{{asset('vendors/datatables.net-bs/css/dataTables.bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css')}}" rel="stylesheet">
+@endsection
+
+@section('content')
+    @include('cf_lite.includes.flash-message')
+    <div class="row">
+        <div class="col-sm-12">
+            <center>
+                <h2 class="page-title">@lang('labels.weigh_n_measure')<br><small>@lang('labels.member_list')</small></h2>
+            </center>
+        </div>
+    </div>
+
+    <div class="row" style="padding-left: 20px; padding-right: 20px;">
+        <div class="col-md-12">
+            {!! Form::open(['method' => 'GET', 'action' => 'WMLiteController@wm_main', 'class' => 'form-inline']) !!}
+            <div class="form-group">
+                {!! Form::label('name', trans('labels.search_member').': ', ['class' => 'control-label']) !!}
+                <div class="input-group">
+                    {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => trans('labels.insert_member_name')]) !!}
+                    <span class="input-group-btn">
+                        {!! Form::button('<span class="fa fa-search"></span>', ['class' => 'btn btn-default', 'type' => 'submit', 'style' => 'padding-top: 9px; padding-bottom: 9px;']) !!}
+                    </span>
+                </div>
+            </div>
+            {!! Form::close() !!}
+        </div>
+
+        @if(isset($_GET['name']) && !empty($_GET['name']))
+            <div class="col-md-12">
+                <h4>@lang('labels.search'): "{{$_GET['name']}}"</h4>
+            </div>
+        @endif
+        <div class="col-md-12">
+            <div class="x_panel">
+                <div class="x_content">
+                    <br/>
+                    <div class="table-responsive" style="background-color: #fff;">
+                        <table class="table table-hover table-bordered" id="data-table">
+                            <thead>
+                            <tr>
+                                <th>@lang('labels.photo')</th>
+                                <th>@lang('labels.fullname')</th>
+                                <th>@lang('labels.last_weigh_n_measure')</th>
+                                <th>@lang('labels.add')</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($members as $member)
+                                <tr>
+                                    <td>
+                                        <a href="{{url('cf-lite/weigh-measure/'.$member->id.'/history')}}">
+                                            @if(!empty($member->user_memberpersonal->photo))
+                                                <img class="img-circle" src="{{asset('images/member_photos/'.$member->user_memberpersonal->photo)}}" style="width: 40px; height: 40px; object-fit: cover;">
+                                            @else
+                                                <img class="img-circle" src="{{asset('images/img.png')}}" style="width: 40px; height: 40px; object-fit: cover;">
+                                            @endif
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="{{url('cf-lite/weigh-measure/'.$member->id.'/history')}}">{{$member->name}}</a>
+                                    </td>
+                                    <td>
+                                        @if(!empty($member->user_memberstatus->last_wm))
+                                            {{date('d F Y', strtotime($member->user_memberstatus->last_wm))}}
+                                        @else
+                                            -
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <a href="{{url('cf-wm/'.$member->id.'/add')}}" target="_blank" class="btn btn-default btn-sm" title="@lang('labels.add_new_weigh_n_measure')"><span class="fa fa-plus"></span></a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@section('other-script')
+    <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('js/dataTables.bootstrap.min.js')}}"></script>
+    <script>
+        $('#data-table').dataTable();
+    </script>
+@endsection

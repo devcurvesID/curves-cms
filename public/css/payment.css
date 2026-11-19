@@ -1,0 +1,67 @@
+.member-debt-card {
+    padding: 15px;
+    background-color: #a467dc;
+    border-radius: 7px;
+}
+
+.member-debt-card:hover {
+    background-color: #d8bdf0;
+}
+
+.member-debt-card:hover td{
+    color: black !important;
+}
+
+.member-debt-card td {
+    /*font-family: 'Raleway', sans-serif;*/
+    font-size: 14px;
+    line-height: 20px;
+    color: white;
+}
+
+.member-debt-card td:first-child {
+    font-weight: 600;
+    padding-right: 5px;
+}
+
+.member-debt-card td:last-child {
+    padding-left: 10px;
+}
+
+.member-debt-card td.my_rupiah {
+    font-size: 30px;
+    padding-top: 10px;
+}
+
+#pay-btn {
+    width: 100% !important;
+    height: 100px;
+}
+
+#payment-modal table th {
+    text-align: right;
+}
+
+.payment-setting-left{
+    float: right;
+}
+
+.payment-setting-right{
+    float: left;
+}
+
+.payment-setting-right, .payment-setting-left{
+    color: mediumpurple;
+    /*border: 1px solid mediumpurple;*/
+    transition: 0.5s;
+}
+
+.payment-setting-right:hover, .payment-setting-left:hover{
+    background-color: rgba(255, 255, 255, .3);
+    color: rebeccapurple;
+    /*border: 1px solid mediumpurple;*/
+}
+
+.member-detail td{
+    padding: 10px;
+}

@@ -1,0 +1,86 @@
+/*.left_col, .nav_title, .sidebar-footer{*/
+    /*background-color: #6e527b;*/
+/*}*/
+
+/*==== FONTS ====*/
+@font-face {
+    font-family: "Raleway-Regular";
+    src: url('../fonts/Raleway/Raleway-Regular.ttf');
+}
+
+@font-face {
+    font-family: "Allura";
+    src: url('../fonts/Allura/Allura-Regular.otf');
+}
+
+@font-face {
+    font-family: "Adlery-Pro";
+    src: url('../fonts/Adlery/adlery-pro.regular.ttf');
+}
+/*==== FONTS ====*/
+
+.nav.side-menu>li.active, .nav.side-menu>li.current-page{
+    border-right: 5px solid #c6b5ce;
+}
+
+.sidebar-footer a{
+    background-color: #c6b5ce;
+}
+.sidebar-footer a:hover{
+    color: white;
+}
+
+.page-title{
+    color: #414042;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.page-title:after{
+    content: ' ';
+    width: 50px;
+    height: 2px;
+    border-bottom: 5px dotted #a08ed1;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.my-section{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.my-bg {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.alert{
+    font-size: 18px;
+    padding-left: 50px;
+}
+
+.page-subtitle{
+    font-size: 20px;
+}
+
+.bootbox .bootbox-body{
+    font-size: 24px;
+    text-align: center;
+    color: white;
+}
+.bootbox .modal-body{
+    padding: 50px;
+}
+.bootbox .modal-footer{
+    text-align: center;
+}
+.bootbox .modal-content{
+    background-color: rgba(180,50,50, 0.8);
+}
+
+.panel_toolbox > li {
+    float: right;
+}

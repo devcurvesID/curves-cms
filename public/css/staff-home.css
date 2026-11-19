@@ -1,0 +1,288 @@
+.home-btn {
+    height: 140px;
+    width: 140px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.home-btn img {
+    max-width: 65px;
+    max-height: 65px;
+}
+
+.home-btn h3 {
+    font-size: 14px !important;
+    margin-top: 10px !important;
+}
+
+.circle-menu {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.home-btn-border-membership-payment {
+    border: 5px solid #3399ff;
+}
+
+.home-btn-border-membership-payment span,
+.home-btn-border-membership-payment h3.home-btn-title {
+    color: #3399ff;
+    margin: 0px 20px 10px 20px;
+}
+
+.home-btn-border-membership-payment:hover, .home-btn-border-membership-payment:hover > span,
+.home-btn-border-membership-payment:hover > h3{
+    background-color: #3399ff;
+    color: #ffffff;
+}
+
+.home-btn-border-product-payment {
+    border: 5px solid #ff9933;
+}
+
+.home-btn-border-product-payment span,
+.home-btn-border-product-payment h3.home-btn-title {
+    color: #ff9933;
+    margin: 0px 20px 10px 20px;
+}
+
+.home-btn-border-product-payment:hover, .home-btn-border-product-payment:hover > span,
+.home-btn-border-product-payment:hover > h3{
+    background-color: #ff9933;
+    color: #ffffff;
+}
+
+.home-btn-border-locker-payment {
+    border: 5px solid #ff70b7;
+}
+
+.home-btn-border-locker-payment span,
+.home-btn-border-locker-payment h3.home-btn-title {
+    color: #ff70b7;
+    margin: 0px 20px 10px 20px;
+}
+
+.home-btn-border-locker-payment:hover, .home-btn-border-locker-payment:hover > span,
+.home-btn-border-locker-payment:hover > h3{
+    background-color: #ff70b7;
+    color: #ffffff;
+}
+
+.home-btn-border-installment-payment {
+    border: 5px solid #00ff00;
+}
+
+.home-btn-border-installment-payment span,
+.home-btn-border-installment-payment h3.home-btn-title {
+    color: #00ff00;
+    margin: 0px 20px 10px 20px;
+}
+
+.home-btn-border-installment-payment:hover, .home-btn-border-installment-payment:hover > span,
+.home-btn-border-installment-payment:hover > h3{
+    background-color: #00ff00;
+    color: #ffffff;
+}
+
+.home-btn-border-promo-payment {
+    border: 5px solid #99ff33;
+}
+
+.home-btn-border-promo-payment span,
+.home-btn-border-promo-payment h3.home-btn-title {
+    color: #99ff33;
+    margin: 0px 20px 10px 20px;
+}
+
+.home-btn-border-promo-payment:hover, .home-btn-border-promo-payment:hover > span,
+.home-btn-border-promo-payment:hover > h3{
+    background-color: #99ff33;
+    color: #ffffff;
+}
+
+.home-btn-border-pc-payment {
+    border: 5px solid #9933ff;
+}
+
+.home-btn-border-pc-payment span,
+.home-btn-border-pc-payment h3.home-btn-title {
+    color: #9933ff;
+    margin: 0px 20px 10px 20px;
+}
+
+.home-btn-border-pc-payment:hover, .home-btn-border-pc-payment:hover > span,
+.home-btn-border-pc-payment:hover > h3{
+    background-color: #9933ff;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.home-btn-border-anggota {
+    border: 5px solid #ec101a;
+}
+
+.home-btn-border-anggota span,
+.home-btn-border-anggota h3.home-btn-title {
+    color: #e16b29;
+    margin: 20px 20px 10px 20px;
+}
+
+.home-btn-border-anggota2 {
+    border: 5px solid #fdf104;
+}
+
+.home-btn-border-anggota2 span,
+.home-btn-border-anggota2 h3.home-btn-title {
+    color: #d9242a;
+    margin: 20px 20px 10px 20px;
+}
+
+.home-btn-border-payment {
+    border: 5px solid #056839;
+}
+
+.home-btn-border-payment span,
+.home-btn-border-payment h3.home-btn-title {
+    color: #05934e;
+    margin: 20px 20px 10px 20px;
+}
+
+.home-btn-border-manajemen {
+    border: 5px solid #dfb8d7;
+}
+
+.home-btn-border-manajemen span,
+.home-btn-border-manajemen h3.home-btn-title {
+    color: #782e92;
+    margin: 20px 20px 10px 20px;
+}
+
+.home-btn-border-pengaturan {
+    border: 5px solid #fab03f;
+}
+
+.home-btn-border-pengaturan span,
+.home-btn-border-pengaturan h3.home-btn-title {
+    color: #fab03f;
+    margin: 20px 20px 10px 20px;
+}
+
+.home-btn-border-info {
+    border: 5px solid #72371c;
+}
+
+.home-btn-border-info span,
+.home-btn-border-info h3.home-btn-title {
+    color: #72371c;
+    margin: 20px 20px 10px 20px;
+}
+
+.home-btn span {
+    font-size: 40px;
+}
+
+.home-btn-title {
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+.box-menu-padding {
+    padding: 10px 0;
+}
+
+.box-menu-utama {
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.box-menu-anggota {
+    /*background: linear-gradient(to right, #e06927 0%, #f79453 100%);*/
+    background: transparent;
+    border: 3px solid #e06927;
+    background-color: rgba(224, 105, 39, 0.1);
+}
+
+.box-menu-anggota2 {
+    /*background: linear-gradient(to right, #f37d5f 0%, #d82028 100%);*/
+    background: transparent;
+    border: 3px solid #f37d5f;
+    background-color: rgba(243, 125, 95, 0.1);
+}
+
+.box-menu-payment {
+    /*background: linear-gradient(to right, #01914c 0%, #5fbd88 100%);*/
+    background: transparent;
+    border: 3px solid #5fbd88;
+    background-color: rgba(95, 189, 136, 0.1);
+}
+
+.box-menu-manajemen {
+    /*background: linear-gradient(to right, #b07fb7 0%, #762b90 100%);*/
+    background: transparent;
+    border: 3px solid #b07fb7;
+    background-color: rgba(176, 127, 183, 0.1);
+}
+
+.box-menu-pengaturan {
+    /*background: linear-gradient(to right, #fedc01 0%, #fff8aa 100%);*/
+    background: transparent;
+    border: 3px solid #fedc01;
+    background-color: rgba(254, 220, 1, 0.1);
+}
+
+.box-menu-info {
+    /*background: linear-gradient(to right, #2ec5f4 0%, #009de0 100%);*/
+    background: transparent;
+    border: 3px solid #2ec5f4;
+    background-color: rgba(46, 197, 244, 0.1);
+}
+
+h3.home-btn-title {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.main-btn {
+    margin-bottom: 30px;
+}
+
+.main-btn h4 {
+    color: #ff4c4c;
+    font-weight: 600;
+}
+
+.main-btn:hover a div h3,
+.main-btn:hover a div span {
+    -webkit-animation: colorchange 1s infinite ease-in-out alternate;
+    animation: colorchange 1s infinite ease-in-out alternate;
+}
+
+@-webkit-keyframes colorchange {
+    from {
+        color: #ffffff;
+    }
+    to {
+        color: #666666;
+    }
+}
+
+@keyframes colorchange {
+    from {
+        color: #ffffff;
+    }
+    to {
+        color: #666666;
+    }
+}
+
+a:hover {
+    text-decoration: none !important;
+}

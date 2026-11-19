@@ -1,0 +1,193 @@
+@extends('cf_lite.layouts.staff-dashboard-template')
+
+@if($filter1 != "0" && $filter2 != "0")
+    @section('title', 'Laporan Cancellation Member '.$club->club_name  . ' [' . date('d F Y', strtotime($filter1)) . ' - ' . date('d F Y', strtotime($filter2)) . ']')
+@elseif($filter1 == "0" && $filter2 != "0")
+    @section('title', 'Laporan Cancellation Member '.$club->club_name  . ' [ Sampai : ' . date('d F Y', strtotime($filter2)) . ']')
+@elseif($filter1 != "0" && $filter2 == "0")
+    @section('title', 'Laporan Cancellation Member '.$club->club_name  . ' [ Dari : ' . date('d F Y', strtotime($filter1)) . ']')
+@else
+    @section('title', 'Laporan Cancellation Member '.$club->club_name)
+@endif
+
+@section('other-style')
+    <link href="{{asset('bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css')}}" rel="stylesheet">
+    <link href="{{asset('select2/dist/css/select2.min.css')}}" rel="stylesheet">
+    <style>
+        .filter-box {
+            padding-bottom: 20px;
+            border-bottom: 5px double #414042;
+            margin-bottom: 20px;
+        }
+
+        .box-menu {
+            min-height: 620px;
+        }
+
+        body {
+            -webkit-print-color-adjust: exact;
+        }
+
+        .dt-buttons {
+            float: left;
+        }
+
+        #data-table_filter {
+            float: right;
+        }
+
+        @media print {
+            th, td {
+                vertical-align: middle !important;
+            }
+        }
+    </style>
+@endsection
+
+@section('content')
+    <div class="col-xs-12">
+        <center>
+            <h2 class="page-title">@lang('labels.list') @lang('labels.cancellation') : {{$club->club_name}}</h2>
+        </center>
+    </div>
+    <div class="col-xs-12">
+        <div class="filter-box">
+            <div class="row">
+                <div class="col-xs-2">
+                    Filter :
+                </div>
+                <div class="col-xs-2">
+                    <input type="text" value="<?php if (isset($filter1)) {
+                        if ($filter1 != "0") {
+                            echo $filter1;
+                        }
+                    } ?>" id="filt-dari" class="form-control filter-date"
+                           placeholder="@lang('labels.from_date')"/>
+                </div>
+                <div class="col-xs-2">
+                    <input type="text" value="<?php if (isset($filter2)) {
+                        if ($filter2 != "0") {
+                            echo $filter2;
+                        }
+                    } ?>" id="filt-sampai" class="form-control filter-date"
+                           placeholder="@lang('labels.thru_date')"/>
+                </div>
+                <div class="col-xs-2">
+                    <a id="btn-filter" class="btn btn-primary"><i class="fa fa-search"></i> @lang('labels.search')
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="box-result">
+            <center>
+                <h3>@lang('labels.from_date') : @if($filter1 != "0") {{date('d F Y', strtotime($filter1))}} @else
+                        - @endif ,
+                    @lang('labels.thru_date') : @if($filter2 != "0") {{date('d F Y', strtotime($filter2))}} @else
+                        - @endif
+                </h3>
+
+                @foreach($list_top as $x)
+                    @if(!empty($x->cancellation_reason_id))
+                        <a class="btn @if($x->cancellation_reason_id == $id) btn-success @else btn-primary @endif my-detail-btn"
+                           id="{{$x->cancellation_reason_id}}">
+                            <i class="fa fa-eye"></i> {{$x->cancellationreason_nosalereason->nosale_reason}} : {{$x->total}}
+                            @lang('labels.person')
+                        </a>
+                    @endif
+                @endforeach
+            </center>
+
+            <table id="data-table" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                    <th>@lang('labels.indexing')</th>
+                    <th>@lang('labels.date')</th>
+                    <th>@lang('labels.member')</th>
+                    <th>@lang('labels.reason')</th>
+                    <th>@lang('labels.fa_staff')</th>
+                    <th>@lang('labels.membership_type')</th>
+                </tr>
+                </thead>
+                <tbody>
+                @php($count = 1)
+                @foreach($result as $x)
+                    <tr>
+                        <td>{{$count++}}</td>
+                        <td>{{date('d F Y', strtotime($x->refund_process_date))}}</td>
+                        <td>{{$x->refundsubmission_user->name}}</td>
+                        <td>{{$x->refundsubmission_cancellationreason->cancellation_reason}}</td>
+                        <td>{{$x->fastaff}}</td>
+                        <td>{{$x->membershiptype}}</td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
+@endsection
+
+@section('other-script')
+
+    <script src="{{asset('js/moment.min.js')}}"></script>
+    <script src="{{asset('bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js')}}"></script>
+
+    <script src="{{asset('select2/dist/js/select2.js')}}"></script>
+
+    <script src="{{asset('js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('js/dataTables.bootstrap.min.js')}}"></script>
+
+    <script src="{{asset('js/dataTables.buttons.min.js')}}"></script>
+    <script src="{{asset('js/buttons.print.min.js')}}"></script>
+
+    <script>
+        $('.filter-date').each(function () {
+            $(this).datetimepicker({
+                format: 'YYYY-MM-DD',
+            });
+        });
+
+        $('#challenge').select2();
+
+        $('#btn-filter').on('click', function () {
+            var filter1 = $('#filt-dari').val();
+            if (filter1 == "") {
+                filter1 = 0;
+            }
+
+            var filter2 = $('#filt-sampai').val();
+            if (filter2 == "") {
+                filter2 = 0;
+            }
+            window.location = "{{url('cf-lite/laporan/cancellation')}}" + "/" + '0' + "/" + filter1 + "/" + filter2;
+        });
+
+        $('.my-detail-btn').on('click', function () {
+            var filter1 = $('#filt-dari').val();
+            if (filter1 == "") {
+                filter1 = 0;
+            }
+
+            var filter2 = $('#filt-sampai').val();
+            if (filter2 == "") {
+                filter2 = 0;
+            }
+            window.location = "{{url('cf-lite/laporan/cancellation')}}" + "/" + $(this).attr('id') + "/" + filter1 + "/" + filter2;
+        });
+
+        $('#data-table').DataTable({
+            info: false,
+            dom: 'Bfrtip',
+            buttons: [
+                {
+                    extend: 'print',
+                    footer: true,
+                    exportOptions: {
+                        columns: ':visible'
+                    }
+                }
+            ]
+        });
+    </script>
+@endsection

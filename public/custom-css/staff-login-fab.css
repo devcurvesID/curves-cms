@@ -1,0 +1,253 @@
+.ba-staff-login {
+    width: 390px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 12px 45px rgba(0, 0, 0, .15);
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: 0 0 -50px 0;
+    overflow-y: auto;
+    opacity: 0;
+}
+
+.ba-staff-login.open {
+    height: 270px;
+    opacity: 1;
+}
+
+.ba-staff-login.popup-ani {
+    -webkit-transition: all .8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all .8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-right: -450px;
+}
+
+.open.popup-ani{
+    margin-right: 65px;
+}
+
+
+.ba-staff-login h1 {
+    font-size: 20px;
+    color: #757575;
+    padding: 25px 0;
+    margin: 0;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.ba-staff-login .ba-logo {
+    width: 65px;
+    height: 25px;
+    background-position: 0px;
+    margin: 0 auto;
+    opacity: .5;
+    cursor: pointer;
+}
+
+.ba-staff-login .ba-logo:hover {
+    opacity: 1;
+}
+
+.logo-ani {
+    transition: 0.5s linear;
+    -webkit-transition: 0.5s linear;
+}
+
+.ba-staff-login-fab {
+    width: 55px;
+    height: 55px;
+    background-color: transparent;
+    border-radius: 30px;
+    float: right;
+    box-shadow: 0px 12px 45px rgba(0, 0, 0, .3);
+    z-index: 1002;
+    position: relative;
+}
+
+.ba-staff-login-fab .img-fab {
+    width: 55px;
+    height: 55px;
+    background-size: cover;
+}
+
+.ba-staff-login-fab .wrap {
+    transform: rotate(0deg);
+    -webkit-transition: all .15s cubic-bezier(0.15, 0.87, 0.45, 1.23);
+    transition: all .15s cubic-bezier(0.15, 0.87, 0.45, 1.23);
+}
+
+.ba-staff-login-fab .ani {
+    transform: rotate(45deg);
+    -webkit-transition: all .15s cubic-bezier(0.15, 0.87, 0.45, 1.23);
+    transition: all .15s cubic-bezier(0.15, 0.87, 0.45, 1.23);
+}
+
+.ba-staff-login-fab .close {
+    float: none;
+    /*Bootstrap Overide*/
+    opacity: 1;
+    /*Bootstrap Overide*/
+}
+
+.ba-staff-login-wrap {
+    position: fixed;
+    right: 0px;
+    bottom: 25px;
+    z-index: 1000;
+}
+
+.ba-settings {
+    position: absolute;
+    top: -25px;
+    right: 0px;
+    padding: 10px 20px;
+    background-color: #555;
+    border-radius: 5px;
+    color: #fff;
+}
+
+#table-kehadiran, #table-kehadiran th{
+    text-align: center;
+}
+
+#menuutama {
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 25px 0px;
+    border-radius: 20px;
+}
+
+/*** payment box ***/
+.ba-payment {
+    width: 450px;
+    height: 50px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0px 12px 45px rgba(0, 0, 0, .15);
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: 0 0 -50px 0;
+    opacity: 0;
+}
+.payment-header{
+    background: #f00;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px;
+    -webkit-border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+}
+.payment-header .closer{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+}
+.payment-header .closer:hover{
+    opacity: 0.5;
+}
+.ba-payment .table-responsive{
+    overflow-y: auto;
+    height: 250px;
+}
+.ba-payment td{
+    font-size: 14px;
+    color: #333 !important;
+}
+.ba-payment td a{
+    color: #333 !important;
+}
+.ba-payment td a:hover{
+    color: #666 !important;
+}
+.ba-payment td span{
+    font-size: 12px;
+    font-weight: normal;
+}
+.ba-payment.open {
+    height: 340px;
+    opacity: 1;
+}
+.ba-payment-wrap {
+    position: fixed;
+    right: 0px;
+    bottom: 85px;
+    z-index: 1000;
+}
+.ba-payment.popup-ani {
+    -webkit-transition: all .8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all .8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-right: -450px;
+}
+.ba-payment.open.popup-ani{
+    margin-right: 65px;
+}
+.ba-payment-fab {
+    width: 55px;
+    height: 55px;
+    background: rgb(255,0,0);
+    background-image: url(../images/assets/icon-pay-date.png);
+    background-image: url(../images/assets/icon-pay-date.png) radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(255,0,0,1) 100%);
+    background-size: 40px 40px ;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    border-radius: 30px;
+    float: right;
+    box-shadow: 0px 12px 45px rgba(0, 0, 0, .3);
+    z-index: 1002;
+    position: relative;
+    border: 2px #fff solid;
+}
+
+.unpaid {
+    background:#f00 !important;
+    color: #fff !important;
+    display: block;
+    width: 98%;
+    padding: 0 0 0 5px;
+    border-bottom: 1px solid #ffc0cb;
+}
+.unpaid span{
+    color:#ffc0cb !important
+}
+.unpaid:hover {
+    opacity: 0.5;
+}
+.list-staff li{
+    margin-bottom: 1px;
+}
+
+.navHeader{
+    display: flex;
+    align-items:center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.navHeader li{
+    text-align: center;
+    padding: 8px 15px;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #05934e;
+}
+.navHeader li.active, .navHeader li:hover{
+    background: #ffc0cb;
+    color: #222;
+}
+.paymentTables{
+    display: none;
+}
+.lastWO{
+    float: right;
+    margin-top: 2px;
+    color: #777;
+}
